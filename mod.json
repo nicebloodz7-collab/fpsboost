@@ -1,0 +1,53 @@
+{
+  "geode": "4.0.0",
+  "gd": { "win": "2.2081", "android": "2.2081", "mac": "2.2081" },
+  "version": "v1.0.0",
+  "id": "tunombre.fps-boost",
+  "name": "FPS Boost",
+  "developer": "TuNombre",
+  "description": "Culling, partículas, glow y shaders configurables para rendir a 240 FPS.",
+  "settings": {
+    "fps-target": {
+      "type": "int", "name": "FPS objetivo",
+      "description": "Intervalo de animación de Cocos. Ponelo igual a tu FPS custom de GD.",
+      "default": 240, "min": 60, "max": 1000
+    },
+    "culling-enabled": {
+      "type": "bool", "name": "Smart Object Culling",
+      "description": "Oculta objetos fuera del viewport con margen ajustado.",
+      "default": true
+    },
+    "culling-margin": {
+      "type": "float", "name": "Margen de culling (px)",
+      "description": "Menos margen = más FPS, pero pueden verse objetos 'aparecer'.",
+      "default": 60.0, "min": 0.0, "max": 400.0,
+      "control": { "slider": true }
+    },
+    "culling-vertical": {
+      "type": "bool", "name": "Culling vertical",
+      "description": "También oculta objetos fuera de pantalla en Y.",
+      "default": true
+    },
+    "disable-glow": {
+      "type": "bool", "name": "Ocultar glow de objetos",
+      "description": "Oculta los sprites de glow. Gran ganancia en niveles con mucho glow.",
+      "default": false
+    },
+    "particle-cap": {
+      "type": "int", "name": "Límite de partículas por emisor",
+      "description": "0 = sin límite. Recorta el total de partículas de cada emisor.",
+      "default": 60, "min": 0, "max": 1000,
+      "control": { "slider": true }
+    },
+    "hide-particles": {
+      "type": "bool", "name": "Ocultar todas las partículas",
+      "description": "Máximo rendimiento: no se dibuja ninguna partícula.",
+      "default": false
+    },
+    "skip-shader-calc": {
+      "type": "bool", "name": "Saltar cálculo de shaders (experimental)",
+      "description": "Evita los cálculos por frame de la ShaderLayer. Puede cambiar el aspecto de niveles con shaders.",
+      "default": false
+    }
+  }
+}
